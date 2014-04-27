@@ -11,6 +11,6 @@ public class DemoServiceImpl implements DemoService{
 
     @Override
     public String sayHello(String message, Collection<String> people) {
-        return message + " to " + StringUtils.join(people, ", ");
+        return message + ", " + StringUtils.join(people, ", ") + "!";
     }
 }
