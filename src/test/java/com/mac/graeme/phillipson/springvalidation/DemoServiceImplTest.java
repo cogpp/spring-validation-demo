@@ -37,6 +37,11 @@ public class DemoServiceImplTest {
     }
 
     @Test(expected = MethodConstraintViolationException.class)
+    public void testBlankMessage() {
+        demoService.sayHello("   ", Collections.singleton("World!"));
+    }
+
+    @Test(expected = MethodConstraintViolationException.class)
     public void testBadCollection() {
         demoService.sayHello("Hello", Collections.<String>emptyList());
     }
