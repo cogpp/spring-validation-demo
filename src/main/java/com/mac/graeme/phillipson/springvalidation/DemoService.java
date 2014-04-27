@@ -11,7 +11,6 @@ import java.util.Collection;
 @Validated
 public interface DemoService {
 
-
     @NotNull @NotBlank String sayHello(@NotNull @NotBlank String message,
                                        @NotNull @Size(min=1) Collection<String> people);
 }
