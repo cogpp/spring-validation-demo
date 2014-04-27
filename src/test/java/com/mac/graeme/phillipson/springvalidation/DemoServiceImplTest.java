@@ -56,4 +56,14 @@ public class DemoServiceImplTest {
         demoService.sayHello("Hello", Arrays.asList("Earth", "Mars", "Jupiter"));
     }
 
+
+    @Test
+    public void demoErrorMessage() {
+        try {
+            demoService.sayHello(null, Collections.singleton("World!"));
+        }
+        catch(MethodConstraintViolationException ex) {
+            logger.error(ex.getMessage());
+        }
+    }
 }
