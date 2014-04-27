@@ -35,8 +35,13 @@ public class DemoServiceTest {
     }
 
     @Test(expected = MethodConstraintViolationException.class)
-    public void testBadCollection() {
+    public void testNullCollection() {
         demoServiceNull.sayHello("Hello", Collections.<String>emptyList());
+    }
+
+    @Test(expected = MethodConstraintViolationException.class)
+    public void testBadCollection() {
+        demoServiceNull.sayHello("Hello", null);
     }
 
     @Test(expected = MethodConstraintViolationException.class)
