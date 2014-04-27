@@ -46,11 +46,11 @@ public class DemoServiceTest {
 
     @Test(expected = MethodConstraintViolationException.class)
     public void testNullReturn() {
-        demoServiceNull.sayHello("Hello", Arrays.asList("Earth", "Mars"));
+        demoServiceNull.sayHello("Hello", Collections.singleton("World!"));
     }
 
     @Test(expected = MethodConstraintViolationException.class)
     public void testBlankReturn() {
-        demoServiceBlank.sayHello("Hello", Arrays.asList("Earth", "Mars"));
+        demoServiceBlank.sayHello("Hello", Collections.singleton("World!"));
     }
 }
